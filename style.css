@@ -1,0 +1,96 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    background: url(bg.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.container{
+    background: rgba(255, 255, 255, 0.158);
+    width: 300px;
+    height: 300px;
+    align-items: center;
+    border: 2px solid rgb(175, 175, 175);
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+
+}
+
+.container .number{
+    --rotation: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotation));
+    font-size: 20px;
+    color: #fff;
+}
+
+.container .number1{--rotation:30deg;}
+.container .number2{--rotation:60deg;}
+.container .number3{--rotation:90deg;}
+.container .number4{--rotation:120deg;}
+.container .number5{--rotation:150deg;}
+.container .number6{--rotation:180deg;}
+.container .number7{--rotation:210deg;}
+.container .number8{--rotation:240deg;}
+.container .number9{--rotation:270deg;}
+.container .number10{--rotation:300deg;}
+.container .number11{--rotation:330deg;}
+
+.container .hand{
+    --rotation:0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom;
+    border: solid white 1px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    z-index: 10;
+    transform: translateX(-50%) rotate(calc(var(--rotation)* 1deg));
+}
+.container::after{
+    content: '';
+    position: absolute;
+    background-color: #007ccf;
+    z-index: 11;
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+.container .hand.seconds{
+    background-color: #fff;
+    width: 3px;
+    height: 46%;
+}
+
+.container .hand.hour{
+    background: linear-gradient(220deg, #00bbd4a2, #007ccf);
+    height: 30%;
+    width: 8px;
+}
+
+.container .hand.minutes{
+    background: linear-gradient(220deg, #d400d4, #0083cf);
+    height: 40%;
+    width: 7px;
+}
